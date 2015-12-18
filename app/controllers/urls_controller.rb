@@ -18,6 +18,8 @@ class UrlsController < ApplicationController
     #remove the leading slash
     @short_partial_url = request.original_fullpath[1..-1]
     @url = Url.find_by(short_partial_url: @short_partial_url)
+    @url.clicks += 1
+    @url.save
     redirect_to @url.long_url, status: 301, turbolinks: false
   end
 
