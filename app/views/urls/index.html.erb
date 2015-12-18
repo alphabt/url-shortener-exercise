@@ -19,9 +19,10 @@
     </tr>
   </thead>
   <% @urls.each do |url| %>
+  <% @short_url = "#{request.protocol}#{request.host_with_port}/#{url.short_partial_url}" %>
   <tr>
-    <td><%= url.long_url %></td>
-    <td><%= url.short_url %></td>
+    <td><%= link_to url.long_url, url.long_url %></td>
+    <td><%= link_to @short_url, @short_url %></td>
     <td><%= url.clicks %></td>
   </tr>
 <% end %>

@@ -14,11 +14,13 @@
 ActiveRecord::Schema.define(version: 20151215082908) do
 
   create_table "urls", force: :cascade do |t|
-    t.string   "long_url",               null: false
-    t.string   "short_url"
-    t.integer  "clicks",     default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "long_url",                      null: false
+    t.string   "short_partial_url",             null: false
+    t.integer  "clicks",            default: 0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
+
+  add_index "urls", ["short_partial_url"], name: "index_urls_on_short_partial_url", unique: true
 
 end
