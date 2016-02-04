@@ -3,8 +3,11 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
+# Ruby interface to the PostgreSQL RDBMS
 gem 'pg', group: :production
+# Enables serving assets in production and setting your logger to standard out, both of which are required to run a Rails 4 application on a twelve-factor provider.
 gem 'rails_12factor', group: :production
+# Sass-powered version of Bootstrap 3
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -26,7 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Pagination
 gem 'kaminari'
+# Basic Gem for quick default inclusion of Kaminari theme compatible with Twitter Bootstrap 2.0 and Twitter Bootstrap 3.0
 gem 'bootstrap-kaminari-views'
+# Awesome Print is a Ruby library that pretty prints Ruby objects in full color exposing their internal structure with proper indentation
 gem 'awesome_print', require:'ap'
 
 # Use ActiveModel has_secure_password
@@ -43,16 +48,18 @@ group :development, :test do
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Pry debugger
   gem 'pry-rails'
+  # Quiet Assets turns off the Rails asset pipeline log.
   gem 'quiet_assets'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Supporting gem for Rails Panel (Google Chrome extension for Rails development)
   gem 'meta_request'
 end
 
